@@ -1,0 +1,37 @@
+@tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    @layer base {
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        @apply bg-spotify-darker text-gray-300 antialiased;
+      }
+    }
+
+    @layer components {
+      .animate-gradient-text {
+        background: linear-gradient(90deg, #008000, #800080);
+        background-size: 200% 200%;
+        animation: gradient-flow 5s ease infinite;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      @keyframes gradient-flow {
+        0% { background-position: 0% 50%; }
+        100% { background-position: 100% 50%; }
+      }
+
+      .animate-blink-slow {
+        animation: blink-slow 3s infinite;
+      }
+
+      @keyframes blink-slow {
+        0%, 100% { opacity: 0.5; }
+        50% { opacity: 1; }
+      }
+    }
